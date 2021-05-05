@@ -3,7 +3,7 @@ package markdown
 import "strings"
 
 const (
-	defaultBaseLen = 10
+	defaultNodeLen = 10
 )
 
 // Parse return all markdown nodes from lines
@@ -12,7 +12,7 @@ func Parse(lines []string) []Node {
 		return nil
 	}
 
-	nodes := make([]Node, 0, defaultBaseLen)
+	nodes := make([]Node, 0, defaultNodeLen)
 
 	for _, line := range lines {
 		line = strings.TrimSpace(line)
