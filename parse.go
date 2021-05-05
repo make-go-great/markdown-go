@@ -12,7 +12,7 @@ func Parse(lines []string) []Node {
 		return nil
 	}
 
-	bases := make([]Node, 0, defaultBaseLen)
+	nodes := make([]Node, 0, defaultBaseLen)
 
 	for _, line := range lines {
 		line = strings.TrimSpace(line)
@@ -22,18 +22,18 @@ func Parse(lines []string) []Node {
 		}
 
 		if strings.HasPrefix(line, string(headerToken)) {
-			bases = append(bases, parseHeader(line))
+			nodes = append(nodes, parseHeader(line))
 			continue
 		}
 
 		if strings.HasPrefix(line, string(defaultListToken)) ||
 			strings.HasPrefix(line, string(alternativeListToken)) {
-			bases = append(bases, parseListItem(line))
+			nodes = append(nodes, parseListItem(line))
 			continue
 		}
 	}
 
-	return bases
+	return nodes
 }
 
 func parseHeader(line string) header {
