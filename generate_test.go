@@ -9,12 +9,12 @@ import (
 func TestGenerate(t *testing.T) {
 	tests := []struct {
 		name  string
-		bases []Node
+		nodes []Node
 		want  string
 	}{
 		{
 			name: "normal",
-			bases: []Node{
+			nodes: []Node{
 				header{
 					level: 1,
 					text:  "header",
@@ -32,7 +32,7 @@ func TestGenerate(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
-			got := GenerateText(tc.bases)
+			got := GenerateText(tc.nodes)
 			assert.Equal(t, tc.want, got)
 		})
 	}

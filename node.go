@@ -62,6 +62,6 @@ func (i listItem) String() string {
 	return string(defaultListToken) + string(spaceToken) + text
 }
 
-func Equal(base1, base2 Node) bool {
-	return base1.String() == base2.String()
+func Equal(n1, n2 Node) bool {
+	return n1.String() == n2.String()
 }
