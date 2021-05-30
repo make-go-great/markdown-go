@@ -26,10 +26,16 @@ func Parse(lines []string) []Node {
 			continue
 		}
 
-		if strings.HasPrefix(line, string(defaultListToken)) ||
-			strings.HasPrefix(line, string(alternativeListToken)) {
+		isListToken := false
+		for listTok := range listTokens {
+			if strings.HasPrefix(line, string(listTok)) {
+				isListToken = true
+				break
+			}
+		}
+
+		if isListToken {
 			nodes = append(nodes, parseListItem(line))
-			continue
 		}
 	}
 
@@ -57,8 +63,10 @@ func parseHeader(line string) header {
 }
 
 func parseListItem(line string) listItem {
-	line = strings.TrimLeft(line, string(defaultListToken))
-	line = strings.TrimLeft(line, string(alternativeListToken))
+	for listTok := range listTokens {
+		line = strings.TrimLeft(line, string(listTok))
+	}
+
 	line = strings.TrimSpace(line)
 
 	return listItem{

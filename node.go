@@ -6,9 +6,14 @@ import "strings"
 
 const (
 	headerToken          = '#'
-	defaultListToken     = '-'
+	listToken            = '-'
 	alternativeListToken = '*'
 )
+
+var listTokens = map[rune]struct{}{
+	'-': {},
+	'*': {},
+}
 
 // Node is single markdown syntax representation
 // Example: header, list, ...
@@ -57,7 +62,7 @@ func NewListItem(text string) Node {
 func (i listItem) String() string {
 	text := strings.TrimSpace(i.text)
 
-	return string(defaultListToken) + " " + text
+	return string(listToken) + " " + text
 }
 
 func Equal(n1, n2 Node) bool {
