@@ -9,8 +9,9 @@ func GenerateText(nodes []Node) string {
 		lines[i] = node.String()
 	}
 
-	result := strings.Join(lines, string(NewlineToken)+string(NewlineToken))
-	// Fix no newline at end of file
-	result += string(NewlineToken)
+	result := strings.Join(lines, "\n\n")
+	// Ensure there is newline at end of file
+	result += "\n"
+
 	return result
 }

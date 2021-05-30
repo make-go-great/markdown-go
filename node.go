@@ -1,16 +1,13 @@
+// https://guides.github.com/features/mastering-markdown/
+
 package markdown
 
 import "strings"
-
-// https://guides.github.com/features/mastering-markdown/
 
 const (
 	headerToken          = '#'
 	defaultListToken     = '-'
 	alternativeListToken = '*'
-
-	spaceToken   = ' '
-	NewlineToken = '\n'
 )
 
 // Node is single markdown syntax representation
@@ -31,6 +28,7 @@ func NewHeader(level int, text string) Node {
 	}
 }
 
+// Example: # Your title
 func (h header) String() string {
 	var builder strings.Builder
 
@@ -38,7 +36,7 @@ func (h header) String() string {
 		builder.WriteString(string(headerToken))
 	}
 
-	builder.WriteString(string(spaceToken))
+	builder.WriteString(" ")
 
 	text := strings.TrimSpace(h.text)
 	builder.WriteString(text)
@@ -59,7 +57,7 @@ func NewListItem(text string) Node {
 func (i listItem) String() string {
 	text := strings.TrimSpace(i.text)
 
-	return string(defaultListToken) + string(spaceToken) + text
+	return string(defaultListToken) + " " + text
 }
 
 func Equal(n1, n2 Node) bool {
