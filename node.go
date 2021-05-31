@@ -10,8 +10,8 @@ const (
 )
 
 var listTokens = map[rune]struct{}{
-	'-': {},
-	'*': {},
+	listToken: {},
+	'*':       {},
 }
 
 // Node is single markdown syntax representation
