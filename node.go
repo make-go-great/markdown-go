@@ -5,9 +5,8 @@ package markdown
 import "strings"
 
 const (
-	headerToken          = '#'
-	listToken            = '-'
-	alternativeListToken = '*'
+	headerToken = '#'
+	listToken   = '-'
 )
 
 var listTokens = map[rune]struct{}{
