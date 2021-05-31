@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v0.3.0 (2021-05-31)
+
+### Others
+
+- chore: remove unused token (2021-05-31)
+
+- chore(changelog): generate v0.2.0 (2021-05-30)
+
 ## v0.2.0 (2021-05-30)
 
 ### Added
