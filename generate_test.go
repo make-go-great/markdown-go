@@ -15,14 +15,14 @@ func TestGenerate(t *testing.T) {
 		{
 			name: "normal",
 			nodes: []Node{
-				header{
+				Header{
 					level: 1,
 					text:  "header",
 				},
-				listItem{
+				ListItem{
 					text: "item 1",
 				},
-				listItem{
+				ListItem{
 					text: "item 2",
 				},
 			},

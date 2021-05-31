@@ -20,20 +20,20 @@ type Node interface {
 	String() string
 }
 
-type header struct {
+type Header struct {
 	level int
 	text  string
 }
 
-func NewHeader(level int, text string) Node {
-	return header{
+func NewHeader(level int, text string) Header {
+	return Header{
 		level: level,
 		text:  text,
 	}
 }
 
 // Example: # Your title
-func (h header) String() string {
+func (h Header) String() string {
 	var builder strings.Builder
 
 	for i := 0; i < h.level; i++ {
@@ -48,17 +48,17 @@ func (h header) String() string {
 	return builder.String()
 }
 
-type listItem struct {
+type ListItem struct {
 	text string
 }
 
-func NewListItem(text string) Node {
-	return listItem{
+func NewListItem(text string) ListItem {
+	return ListItem{
 		text: text,
 	}
 }
 
-func (i listItem) String() string {
+func (i ListItem) String() string {
 	text := strings.TrimSpace(i.text)
 
 	return string(listToken) + " " + text

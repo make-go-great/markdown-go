@@ -42,7 +42,7 @@ func Parse(lines []string) []Node {
 	return nodes
 }
 
-func parseHeader(line string) header {
+func parseHeader(line string) Header {
 	level := 0
 
 	for _, c := range line {
@@ -56,20 +56,20 @@ func parseHeader(line string) header {
 	line = strings.TrimLeft(line, string(headerToken))
 	line = strings.TrimSpace(line)
 
-	return header{
+	return Header{
 		level: level,
 		text:  line,
 	}
 }
 
-func parseListItem(line string) listItem {
+func parseListItem(line string) ListItem {
 	for listTok := range listTokens {
 		line = strings.TrimLeft(line, string(listTok))
 	}
 
 	line = strings.TrimSpace(line)
 
-	return listItem{
+	return ListItem{
 		text: line,
 	}
 }

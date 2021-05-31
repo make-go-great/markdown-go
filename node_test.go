@@ -9,12 +9,12 @@ import (
 func TestHeaderString(t *testing.T) {
 	tests := []struct {
 		name   string
-		header header
+		header Header
 		want   string
 	}{
 		{
 			name: "level 1",
-			header: header{
+			header: Header{
 				level: 1,
 				text:  "abc",
 			},
@@ -22,7 +22,7 @@ func TestHeaderString(t *testing.T) {
 		},
 		{
 			name: "level 3",
-			header: header{
+			header: Header{
 				level: 3,
 				text:  "xyz",
 			},
@@ -41,12 +41,12 @@ func TestHeaderString(t *testing.T) {
 func TestListItemString(t *testing.T) {
 	tests := []struct {
 		name     string
-		listItem listItem
+		listItem ListItem
 		want     string
 	}{
 		{
 			name: "normal",
-			listItem: listItem{
+			listItem: ListItem{
 				text: "abc",
 			},
 			want: "- abc",

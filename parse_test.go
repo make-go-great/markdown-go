@@ -19,11 +19,11 @@ func TestParse(t *testing.T) {
 				"- xyz",
 			},
 			want: []Node{
-				header{
+				Header{
 					level: 1,
 					text:  "abc",
 				},
-				listItem{
+				ListItem{
 					text: "xyz",
 				},
 			},
@@ -35,11 +35,11 @@ func TestParse(t *testing.T) {
 				"* abc",
 			},
 			want: []Node{
-				header{
+				Header{
 					level: 3,
 					text:  "xyz",
 				},
-				listItem{
+				ListItem{
 					text: "abc",
 				},
 			},
@@ -58,12 +58,12 @@ func TestParseHeader(t *testing.T) {
 	tests := []struct {
 		name string
 		line string
-		want header
+		want Header
 	}{
 		{
 			name: "level 1",
 			line: "# abc",
-			want: header{
+			want: Header{
 				level: 1,
 				text:  "abc",
 			},
@@ -71,7 +71,7 @@ func TestParseHeader(t *testing.T) {
 		{
 			name: "level 3",
 			line: "### xyz",
-			want: header{
+			want: Header{
 				level: 3,
 				text:  "xyz",
 			},
@@ -90,19 +90,19 @@ func TestParseListItem(t *testing.T) {
 	tests := []struct {
 		name string
 		line string
-		want listItem
+		want ListItem
 	}{
 		{
 			name: "normal",
 			line: "- abc",
-			want: listItem{
+			want: ListItem{
 				text: "abc",
 			},
 		},
 		{
 			name: "alternative",
 			line: "* xyz",
-			want: listItem{
+			want: ListItem{
 				text: "xyz",
 			},
 		},
