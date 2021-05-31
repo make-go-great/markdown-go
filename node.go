@@ -26,6 +26,8 @@ type Header struct {
 }
 
 func NewHeader(level int, text string) Header {
+	text = strings.TrimSpace(text)
+
 	return Header{
 		level: level,
 		text:  text,
@@ -41,9 +43,7 @@ func (h Header) String() string {
 	}
 
 	builder.WriteString(" ")
-
-	text := strings.TrimSpace(h.text)
-	builder.WriteString(text)
+	builder.WriteString(h.text)
 
 	return builder.String()
 }
@@ -53,15 +53,15 @@ type ListItem struct {
 }
 
 func NewListItem(text string) ListItem {
+	text = strings.TrimSpace(text)
+
 	return ListItem{
 		text: text,
 	}
 }
 
 func (i ListItem) String() string {
-	text := strings.TrimSpace(i.text)
-
-	return string(listToken) + " " + text
+	return string(listToken) + " " + i.text
 }
 
 func Equal(n1, n2 Node) bool {
