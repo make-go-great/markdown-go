@@ -54,12 +54,8 @@ func parseHeader(line string) Header {
 	}
 
 	line = strings.TrimLeft(line, string(headerToken))
-	line = strings.TrimSpace(line)
 
-	return Header{
-		level: level,
-		text:  line,
-	}
+	return NewHeader(level, line)
 }
 
 func parseListItem(line string) ListItem {
@@ -67,9 +63,5 @@ func parseListItem(line string) ListItem {
 		line = strings.TrimLeft(line, string(listTok))
 	}
 
-	line = strings.TrimSpace(line)
-
-	return ListItem{
-		text: line,
-	}
+	return NewListItem(line)
 }
