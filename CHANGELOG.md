@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## v0.4.0 (2021-06-01)
+
+### Added
+
+- feat: trim space token before init (2021-05-31)
+
+- feat: prefer struct to interface (2021-05-31)
+
+### Others
+
+- refactor: use new func in parse (2021-06-01)
+
+- chore: add MIT license (2021-05-31)
+
+- chore(readme): add badges (2021-05-31)
+
+- refactor: use listToken inisde listTokens (2021-05-31)
+
+- chore(changelog): generate v0.3.0 (2021-05-31)
+
 ## v0.3.0 (2021-05-31)
 
 ### Others
