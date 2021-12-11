@@ -1,4 +1,4 @@
-module github.com/haunt98/markdown-go
+module github.com/make-go-great/markdown-go
 
 go 1.17
 
