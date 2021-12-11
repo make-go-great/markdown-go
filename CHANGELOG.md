@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v0.5.0 (2021-12-11)
+
+### Added
+
+- feat: Equal node ignore case (2021-12-11)
+
+### Others
+
+- chore: update go module name (2021-12-11)
+
+- chore: bump go 1.17 (2021-12-11)
+
+- chore(changelog): generate v0.4.0 (2021-06-01)
+
 ## v0.4.0 (2021-06-01)
 
 ### Added
