@@ -60,3 +60,26 @@ func TestListItemString(t *testing.T) {
 		})
 	}
 }
+
+func TestEqual(t *testing.T) {
+	tests := []struct {
+		name string
+		n1   Node
+		n2   Node
+		want bool
+	}{
+		{
+			name: "header",
+			n1:   NewHeader(0, "CHANGELOG"),
+			n2:   NewHeader(0, "Changelog"),
+			want: true,
+		},
+	}
+
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			got := Equal(tc.n1, tc.n2)
+			assert.Equal(t, tc.want, got)
+		})
+	}
+}
